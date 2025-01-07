@@ -16,10 +16,10 @@ const works = [
     projectLink: 'scientific-calculator-tau-six.vercel.app',
   },
   {
-    imgSrc: '/assets/project-2.jpg',
-    title: 'Free stock photo app',
-    tags: ['API', 'SPA'],
-    projectLink: 'https://github.com/rotiminicol',
+    imgSrc: '/assets/coffeshop.png',
+    title: 'Oigio Cafe',
+    tags: ['React', 'Javascript'],
+    projectLink: 'oigio-cafe.vercel.app',
   },
   {
     imgSrc: '/assets/project-3.jpg',
