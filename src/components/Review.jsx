@@ -22,43 +22,44 @@ import ReviewCard from "./ReviewCard";
 
 
 const reviews = [
-   {
-     content: 'Exceptional web development! Delivered a seamless, responsive site with clean code and great UX.',
-     name: 'Muhyideen',
-     imgSrc: '/images/muhyideen.png',
-     company: 'Bfree Africa'
-   },
-   {
-     content: 'Impressive work! Fast loading times, intuitive design, and flawless backend integration. Highly recommend.',
-     name: 'Moses',
-     imgSrc: '/images/moses.png',
-     company: 'Bfree Africa'
-   },
-   {
-     content: 'Outstanding developer! Built a robust site with perfect functionality. Efficient and detail-oriented.',
-     name: 'Sandra Welli',
-     imgSrc: '/images/sandra.png',
-     company: 'Cowris'
-   },
-   {
-     content: 'Creative and skilled! Produced a modern, user-friendly site that exceeded expectations. Great communication.',
-     name: 'Wale Abba',
-     imgSrc: '/images/wale.png',
-     company: 'Cowris'
-   },
-   {
-     content: 'Professional work! Delivered on time, with a polished design and smooth user experience. Top-notch developer.',
-     name: 'George Evripidou',
-     imgSrc: '/images/people-3.jpg',
-     company: 'Castley group of companies'
-   },
-   {
-     content: 'Excellent project execution! High-quality code, responsive design, and exceptional problem-solving skills.',
-     name: 'Opeyemi',
-     imgSrc: '/images/ope.png',
-     company: 'Castley Group of Companies'
-   }
- ];
+  {
+    content: 'Exceptional web development! Delivered a seamless, responsive site with clean code and great UX.',
+    name: 'Muhyideen',
+    imgSrc: '/assets/muhyideen.png',
+    company: 'Bfree Africa',
+  },
+  {
+    content: 'Impressive work! Fast loading times, intuitive design, and flawless backend integration. Highly recommend.',
+    name: 'Moses',
+    imgSrc: '/assets/moses.png',
+    company: 'Bfree Africa',
+  },
+  {
+    content: 'Outstanding developer! Built a robust site with perfect functionality. Efficient and detail-oriented.',
+    name: 'Sandra Welli',
+    imgSrc: '/assets/sandra.png',
+    company: 'Cowris',
+  },
+  {
+    content: 'Creative and skilled! Produced a modern, user-friendly site that exceeded expectations. Great communication.',
+    name: 'Wale Abba',
+    imgSrc: '/assets/wale.png',
+    company: 'Cowris',
+  },
+  {
+    content: 'Professional work! Delivered on time, with a polished design and smooth user experience. Top-notch developer.',
+    name: 'George Evripidou',
+    imgSrc: '/assets/people-3.jpg',
+    company: 'Castley group of companies',
+  },
+  {
+    content: 'Excellent project execution! High-quality code, responsive design, and exceptional problem-solving skills.',
+    name: 'Opeyemi',
+    imgSrc: '/assets/ope.png',
+    company: 'Castley Group of Companies',
+  },
+];
+
 
 
 const Review = () => {

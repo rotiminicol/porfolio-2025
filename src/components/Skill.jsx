@@ -8,48 +8,51 @@
  */
 import SkillCard from "./SkillCard";
 
+
+
 const skillItem = [
   {
-    imgSrc: '/images/figma.svg',
+    imgSrc: '/assets/figma.svg',
     label: 'Figma',
-    desc: 'Design tool'
+    desc: 'Design tool',
   },
   {
-    imgSrc: '/images/css3.svg',
+    imgSrc: '/assets/css3.svg',
     label: 'CSS',
-    desc: 'User Interface'
+    desc: 'User Interface',
   },
   {
-    imgSrc: '/images/javascript.svg',
+    imgSrc: '/assets/javascript.svg',
     label: 'JavaScript',
-    desc: 'Interaction'
+    desc: 'Interaction',
   },
   {
-    imgSrc: '/images/nodejs.svg',
+    imgSrc: '/assets/nodejs.svg',
     label: 'NodeJS',
-    desc: 'Web Server'
+    desc: 'Web Server',
   },
   {
-    imgSrc: '/images/expressjs.svg',
+    imgSrc: '/assets/expressjs.svg',
     label: 'ExpressJS',
-    desc: 'Node Framework'
+    desc: 'Node Framework',
   },
   {
-    imgSrc: '/images/mongodb.svg',
+    imgSrc: '/assets/mongodb.svg',
     label: 'MongoDB',
-    desc: 'Database'
+    desc: 'Database',
   },
   {
-    imgSrc: '/images/react.svg',
+    imgSrc: '/assets/react.svg',
     label: 'React',
-    desc: 'Framework'
+    desc: 'Framework',
   },
   {
-    imgSrc: '/images/tailwindcss.svg',
+    imgSrc: '/assets/tailwindcss.svg',
     label: 'TailwindCSS',
-    desc: 'User Interface'
+    desc: 'User Interface',
   },
 ];
+
 
 const Skill = () => {
   return (
