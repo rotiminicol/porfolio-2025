@@ -10,10 +10,10 @@ import ProjectCard from "./ProjectCard";
 
 const works = [
   {
-    imgSrc: '/assets/project-1.jpg',
-    title: 'Full stack music app',
-    tags: ['API', 'MVC', 'Development'],
-    projectLink: 'https://github.com/rotiminicol',
+    imgSrc: '/assets/scientific calculator.png',
+    title: 'Scientific Calculator',
+    tags: ['React', 'Vite', 'javascript'],
+    projectLink: 'scientific-calculator-tau-six.vercel.app',
   },
   {
     imgSrc: '/assets/project-2.jpg',
@@ -40,9 +40,9 @@ const works = [
     projectLink: 'https://github.com/rotiminicol',
   },
   {
-    imgSrc: '/assets/project-6.jpg',
+    imgSrc: '/assets/v-card.png',
     title: 'vCard Personal portfolio',
-    tags: ['Web-design', 'Development'],
+    tags: ['Web-design', 'Motion'],
     projectLink: 'https://james-portfolio-two.vercel.app',
   },
 ];
