@@ -22,10 +22,10 @@ const works = [
     projectLink: 'oigio-cafe.vercel.app',
   },
   {
-    imgSrc: '/assets/project-3.jpg',
-    title: 'Recipe app',
+    imgSrc: '/assets/casino278.png',
+    title: 'Online Traffic King',
     tags: ['Development', 'API'],
-    projectLink: 'https://github.com/rotiminicol',
+    projectLink: 'https://onlinetrafficking.vercel.app/',
   },
   {
     imgSrc: '/assets/project-4.jpg',
