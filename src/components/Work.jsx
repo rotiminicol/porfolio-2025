@@ -13,13 +13,13 @@ const works = [
     imgSrc: '/assets/scientific calculator.png',
     title: 'Scientific Calculator',
     tags: ['React', 'Vite', 'javascript'],
-    projectLink: 'scientific-calculator-tau-six.vercel.app',
+    projectLink: 'https://scientific-calculator-tau-six.vercel.app/',
   },
   {
     imgSrc: '/assets/coffeshop.png',
     title: 'Oigio Cafe',
     tags: ['React', 'Javascript'],
-    projectLink: 'oigio-cafe.vercel.app',
+    projectLink: 'https://oigio-cafe.vercel.app/',
   },
   {
     imgSrc: '/assets/casino278.png',
