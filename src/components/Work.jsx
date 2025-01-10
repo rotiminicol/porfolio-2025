@@ -28,12 +28,24 @@ const works = [
     projectLink: 'https://onlinetrafficking.vercel.app/',
   },
   {
-    imgSrc: '/assets/project-4.jpg',
-    title: 'Real estate website',
+    imgSrc: '/assets/prestige.png',
+    title: 'Prestige Motors',
     tags: ['Web-design', 'Development'],
+    projectLink: 'https://prestige-motors.vercel.app/',
+  },
+  {
+    imgSrc: '/assets/project-5.jpg',
+    title: 'eCommerce website',
+    tags: ['eCommerce', 'Development'],
     projectLink: 'https://github.com/rotiminicol',
   },
   {
+    imgSrc: '/assets/v-card.png',
+    title: 'vCard Personal portfolio',
+    tags: ['Web-design', 'Motion'],
+    projectLink: 'https://james-portfolio-two.vercel.app',
+  },
+   {
     imgSrc: '/assets/project-5.jpg',
     title: 'eCommerce website',
     tags: ['eCommerce', 'Development'],
