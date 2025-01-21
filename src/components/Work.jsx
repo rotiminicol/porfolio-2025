@@ -12,7 +12,7 @@ const works = [
   {
     imgSrc: '/assets/scientific calculator.png',
     title: 'Scientific Calculator',
-    tags: ['React', 'Vite', 'javascript'],
+    tags: ['React','javascript'],
     projectLink: 'https://scientific-calculator-tau-six.vercel.app/',
   },
   {
@@ -24,20 +24,20 @@ const works = [
   {
     imgSrc: '/assets/casino278.png',
     title: 'Online Traffic King',
-    tags: ['Development', 'API'],
+    tags: ['Ad Company','React', 'Javascript'],
     projectLink: 'https://onlinetrafficking.vercel.app/',
   },
   {
     imgSrc: '/assets/prestige.png',
     title: 'Prestige Motors',
-    tags: ['Web-design', 'Development'],
+    tags: ['Web-design','React', 'Javascript'],
     projectLink: 'https://prestige-motors.vercel.app/',
   },
   {
-    imgSrc: '/assets/project-5.jpg',
-    title: 'eCommerce website',
-    tags: ['eCommerce', 'Development'],
-    projectLink: 'https://github.com/rotiminicol',
+    imgSrc: '/assets/cowris.png',
+    title: 'Cowris Technologies',
+    tags: ['Fintech','Vue.js','Typescript'],
+    projectLink: 'https://cowris.com/',
   },
   {
     imgSrc: '/assets/v-card.png',
@@ -46,16 +46,16 @@ const works = [
     projectLink: 'https://james-portfolio-two.vercel.app',
   },
    {
-    imgSrc: '/assets/project-5.jpg',
-    title: 'eCommerce website',
-    tags: ['eCommerce', 'Development'],
-    projectLink: 'https://github.com/rotiminicol',
+    imgSrc: '/assets/sehder.png',
+    title: 'Sedher Health',
+    tags: ['Next.js', 'Typescript', 'Tailwindcss'],
+    projectLink: 'https://sedher-frontend-woad.vercel.app/',
   },
   {
-    imgSrc: '/assets/v-card.png',
-    title: 'vCard Personal portfolio',
-    tags: ['Web-design', 'Motion'],
-    projectLink: 'https://james-portfolio-two.vercel.app',
+    imgSrc: '/assets/andre.png',
+    title: 'Andres D Jason Car Rentals',
+    tags: ['Web-design', 'Motion', 'React', 'Javascript'],
+    projectLink: 'https://andres-d-jason-car-rentals.vercel.app/',
   },
 ];
 
