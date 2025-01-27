@@ -31,7 +31,7 @@ const works = [
     imgSrc: '/assets/prestige.png',
     title: 'Prestige Motors',
     tags: ['Web-design','React', 'Javascript'],
-    projectLink: 'https://prestige-motors.vercel.app/',
+    projectLink: 'https://pestrige-motors.vercel.app/',
   },
   {
     imgSrc: '/assets/cowris.png',
@@ -46,6 +46,30 @@ const works = [
     projectLink: 'https://james-portfolio-two.vercel.app',
   },
    {
+    imgSrc: '/assets/sehder.png',
+    title: 'Sedher Health',
+    tags: ['Next.js', 'Typescript', 'Tailwindcss'],
+    projectLink: 'https://sedher-frontend-woad.vercel.app/',
+  },
+  {
+    imgSrc: '/assets/andre.png',
+    title: 'Andres D Jason Car Rentals',
+    tags: ['Web-design', 'Motion', 'React', 'Javascript'],
+    projectLink: 'https://andres-d-jason-car-rentals.vercel.app/',
+  },
+  {
+    imgSrc: '/assets/sehder.png',
+    title: 'Sedher Health',
+    tags: ['Next.js', 'Typescript', 'Tailwindcss'],
+    projectLink: 'https://sedher-frontend-woad.vercel.app/',
+  },
+  {
+    imgSrc: '/assets/andre.png',
+    title: 'Andres D Jason Car Rentals',
+    tags: ['Web-design', 'Motion', 'React', 'Javascript'],
+    projectLink: 'https://andres-d-jason-car-rentals.vercel.app/',
+  },
+  {
     imgSrc: '/assets/sehder.png',
     title: 'Sedher Health',
     tags: ['Next.js', 'Typescript', 'Tailwindcss'],
