@@ -58,28 +58,10 @@ const works = [
     projectLink: 'https://andres-d-jason-car-rentals.vercel.app/',
   },
   {
-    imgSrc: '/assets/sehder.png',
-    title: 'Sedher Health',
-    tags: ['Next.js', 'Typescript', 'Tailwindcss'],
-    projectLink: 'https://sedher-frontend-woad.vercel.app/',
-  },
-  {
-    imgSrc: '/assets/andre.png',
-    title: 'Andres D Jason Car Rentals',
-    tags: ['Web-design', 'Motion', 'React', 'Javascript'],
-    projectLink: 'https://andres-d-jason-car-rentals.vercel.app/',
-  },
-  {
-    imgSrc: '/assets/sehder.png',
-    title: 'Sedher Health',
-    tags: ['Next.js', 'Typescript', 'Tailwindcss'],
-    projectLink: 'https://sedher-frontend-woad.vercel.app/',
-  },
-  {
-    imgSrc: '/assets/andre.png',
-    title: 'Andres D Jason Car Rentals',
-    tags: ['Web-design', 'Motion', 'React', 'Javascript'],
-    projectLink: 'https://andres-d-jason-car-rentals.vercel.app/',
+    imgSrc: '/assets/rent.png',
+    title: 'Rent Up',
+    tags: ['React', 'javascript', 'css'],
+    projectLink: 'https://real-estate-two-gamma-25.vercel.app/',
   },
 ];
 
