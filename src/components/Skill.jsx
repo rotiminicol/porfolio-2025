@@ -17,14 +17,64 @@ const skillItem = [
     desc: 'Design tool',
   },
   {
+    imgSrc: '/assets/framer.svg',
+    label: 'Framer Motion',
+    desc: 'Animation Library',
+  },
+  {
     imgSrc: '/assets/css3.svg',
     label: 'CSS',
+    desc: 'User Interface',
+  },
+  {
+    imgSrc: '/assets/tailwindcss.svg',
+    label: 'TailwindCSS',
     desc: 'User Interface',
   },
   {
     imgSrc: '/assets/javascript.svg',
     label: 'JavaScript',
     desc: 'Interaction',
+  },
+  {
+    imgSrc: '/assets/react.svg',
+    label: 'React',
+    desc: 'Framework',
+  },
+  {
+    imgSrc: '/assets/nextdotjs.svg',
+    label: 'Next.js',
+    desc: 'React Framework',
+  },
+  {
+    imgSrc: '/assets/vuedotjs.svg',
+    label: 'Vue.js',
+    desc: 'Framework',
+  },
+  {
+    imgSrc: '/assets/react.svg',
+    label: 'React Native',
+    desc: 'Mobile Framework',
+  },
+  {
+    imgSrc: '/assets/flutter.svg',
+    label: 'Flutter',
+    desc: 'Mobile SDK',
+  },
+  {
+    imgSrc: '/assets/flutter.svg',
+    label: 'FlutterFlow',
+    desc: 'No-code Mobile Builder',
+  },
+  {
+    imgSrc: '/assets/firebase.svg',
+    label: 'Firebase',
+    desc: 'Mobile Backend',
+  },
+  {
+    imgSrc: '/assets/supabase.svg',
+    label: 'Superbase',
+    desc: 'Mobile Backend',
   },
   {
     imgSrc: '/assets/nodejs.svg',
@@ -37,20 +87,32 @@ const skillItem = [
     desc: 'Node Framework',
   },
   {
+    imgSrc: '/assets/php.svg',
+    label: 'PHP',
+    desc: 'Server Language',
+  },
+  {
+    imgSrc: '/assets/laravel.svg',
+    label: 'Laravel',
+    desc: 'PHP Framework',
+  },
+  {
     imgSrc: '/assets/mongodb.svg',
     label: 'MongoDB',
     desc: 'Database',
   },
   {
-    imgSrc: '/assets/react.svg',
-    label: 'React',
-    desc: 'Framework',
+    imgSrc: '/assets/appwrite.svg',
+    label: 'Appwrite',
+    desc: 'Database',
   },
   {
-    imgSrc: '/assets/tailwindcss.svg',
-    label: 'TailwindCSS',
-    desc: 'User Interface',
+    imgSrc: '/assets/redis.svg',
+    label: 'Redis',
+    desc: 'In-memory Database',
   },
+          
+      
 ];
 
 
