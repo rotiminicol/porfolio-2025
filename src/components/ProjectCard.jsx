@@ -1,92 +1,105 @@
 /**
- * @copyright 2024 rotiminicol
+ * @copyright 2025 rotiminicol
  * @license Apache-2.0
  */
 
-import PropTypes from "prop-types";
-import { useState } from "react";
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
-const ProjectCard = ({
-  imgSrc,
-  title,
-  tags,
-  projectLink,
-  description,
-  classes
-}) => {
+const ProjectCard = ({ imgSrc, title, tags, projectLink, description, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
+  // Animation variants
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50, rotateX: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: { duration: 0.8, ease: 'easeOut', delay: index * 0.15 },
+    },
+  };
+
+  const overlayVariants = {
+    initial: { opacity: 0, y: '100%', rotateX: 20 },
+    hover: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: { duration: 0.5, ease: 'easeOut' },
+    },
+  };
+
   return (
-    <div 
-      className={`relative p-3 sm:p-4 rounded-xl md:rounded-2xl bg-gradient-to-br from-zinc-800 to-zinc-900 hover:from-zinc-700/80 hover:to-zinc-800/90 active:bg-zinc-700/60 shadow-md hover:shadow-lg transition-all duration-300 group overflow-hidden ${classes}`}
+    <motion.div
+      className="relative rounded-2xl overflow-hidden bg-black/50 border border-white/10 backdrop-blur-md break-inside-avoid mb-6 transform-gpu"
+      variants={cardVariants}
+      initial="hidden"
+      animate="visible"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={() => setIsHovered(true)}
       onTouchEnd={() => setTimeout(() => setIsHovered(false), 300)}
+      role="article"
+      aria-label={`Project: ${title}`}
+      style={{ transformStyle: 'preserve-3d', perspective: '1000px' }}
+      whileHover={{ rotateX: 5, rotateY: 5, scale: 1.02, z: 50 }}
     >
-      {/* Image container */}
-      <figure className="aspect-video rounded-lg mb-3 sm:mb-4 overflow-hidden relative">
-        <img 
+      {/* Image */}
+      <div className="relative aspect-[4/3] z-10">
+        <img
           src={imgSrc}
           alt={title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+          className="w-full h-full object-cover transition-transform duration-500"
+          style={{ transform: isHovered ? 'scale(1.1) rotateX(5deg)' : 'scale(1)' }}
         />
-        <div className={`absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-70'}`}></div>
-      </figure>
-
-      {/* Content */}
-      <div className="relative z-10">
-        <div className="flex items-start justify-between gap-3 sm:gap-4 mb-2 sm:mb-3">
-          <div>
-            <h3 className="text-base sm:text-lg font-bold text-white mb-1 line-clamp-1">
-              {title}
-            </h3>
-            <p className="text-xs sm:text-sm text-zinc-400 line-clamp-2 mb-2 sm:mb-3">
-              {description}
-            </p>
-          </div>
-
-          {/* Arrow icon */}
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-md sm:rounded-lg grid place-items-center bg-sky-400 text-zinc-950 shrink-0 transition-transform group-hover:scale-110">
-            <span className="material-symbols-rounded text-sm sm:text-base">
-              arrow_outward
-            </span>
-          </div>
-        </div>
-
-        {/* Tags */}
-        <div className="flex flex-wrap items-center gap-1 sm:gap-2">
-          {tags.slice(0, 3).map((label, key) => (
-            <span 
-              key={key}
-              className="h-6 sm:h-7 text-[10px] sm:text-xs font-medium text-sky-400 bg-sky-400/10 grid items-center px-2 sm:px-3 rounded-md sm:rounded-lg backdrop-blur-sm"
-            >
-              {label.split(':')[0]} {/* Show only the category before colon */}
-            </span>
-          ))}
-          {tags.length > 3 && (
-            <span className="h-6 sm:h-7 text-[10px] sm:text-xs font-medium text-zinc-400 bg-zinc-400/10 grid items-center px-2 sm:px-3 rounded-md sm:rounded-lg">
-              +{tags.length - 3}
-            </span>
-          )}
-        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
       </div>
 
-      {/* Gradient overlay */}
-      <div className={`absolute inset-0 bg-gradient-to-br from-sky-400/5 to-purple-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      {/* Overlay Content */}
+      <motion.div
+        className="absolute inset-0 bg-black/80 p-6 flex flex-col justify-end z-20 font-inter"
+        variants={overlayVariants}
+        initial="initial"
+        animate={isHovered ? 'hover' : 'initial'}
+      >
+        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 drop-shadow-md">{title}</h3>
+        <p className="text-sm sm:text-base text-gray-200 mb-4 line-clamp-3">{description}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag, i) => (
+            <span
+              key={i}
+              className="px-3 py-1 text-xs font-medium text-white bg-white/10 rounded-full"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <a
+          href={projectLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-5 py-2 bg-white text-black text-sm font-semibold rounded-full hover:bg-gray-200 transition-all duration-300"
+        >
+          View Project
+          <span className="ml-2 material-symbols-rounded text-base">arrow_outward</span>
+        </a>
+      </motion.div>
 
-      {/* Clickable overlay */}
-      <a 
-        href={projectLink}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute inset-0"
-        aria-label={`View ${title} project`}
-      ></a>
-    </div>
-  )
-}
+      {/* Title on non-hover */}
+      <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+        <h3
+          className="text-xl sm:text-2xl font-bold text-white font-montserrat transition-opacity duration-300 drop-shadow-md"
+          style={{ opacity: isHovered ? 0 : 1 }}
+        >
+          {title}
+        </h3>
+      </div>
+    </motion.div>
+  );
+};
 
 ProjectCard.propTypes = {
   imgSrc: PropTypes.string.isRequired,
@@ -94,7 +107,7 @@ ProjectCard.propTypes = {
   tags: PropTypes.arrayOf(PropTypes.string).isRequired,
   projectLink: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  classes: PropTypes.string
-}
+  index: PropTypes.number.isRequired,
+};
 
 export default ProjectCard;

@@ -7,145 +7,195 @@
  * Components
  */
 import SkillCard from "./SkillCard";
-
-
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 const skillItem = [
   {
-    imgSrc: '/assets/figma.svg',
-    label: 'Figma',
-    desc: 'Design tool',
+    imgSrc: "https://cdn.simpleicons.org/figma/0A0A0A",
+    label: "Figma",
+    desc: "Design tool",
+    brandColor: "#F24E1E",
   },
   {
-    imgSrc: '/assets/framer.svg',
-    label: 'Framer Motion',
-    desc: 'Animation Library',
+    imgSrc: "https://cdn.simpleicons.org/framer/0A0A0A",
+    label: "Framer Motion",
+    desc: "Animation Library",
+    brandColor: "#0055FF",
   },
   {
-    imgSrc: '/assets/css3.svg',
-    label: 'CSS',
-    desc: 'User Interface',
+    imgSrc: "https://cdn.simpleicons.org/css3/0A0A0A",
+    label: "CSS",
+    desc: "User Interface",
+    brandColor: "#1572B6",
   },
   {
-    imgSrc: '/assets/tailwindcss.svg',
-    label: 'TailwindCSS',
-    desc: 'User Interface',
+    imgSrc: "https://cdn.simpleicons.org/tailwindcss/0A0A0A",
+    label: "TailwindCSS",
+    desc: "User Interface",
+    brandColor: "#38B2AC",
   },
   {
-    imgSrc: '/assets/javascript.svg',
-    label: 'JavaScript',
-    desc: 'Interaction',
+    imgSrc: "https://cdn.simpleicons.org/javascript/0A0A0A",
+    label: "JavaScript",
+    desc: "Interaction",
+    brandColor: "#F7DF1E",
   },
   {
-    imgSrc: '/assets/react.svg',
-    label: 'React',
-    desc: 'Framework',
+    imgSrc: "https://cdn.simpleicons.org/react/0A0A0A",
+    label: "React",
+    desc: "Framework",
+    brandColor: "#61DAFB",
   },
   {
-    imgSrc: '/assets/nextdotjs.svg',
-    label: 'Next.js',
-    desc: 'React Framework',
+    imgSrc: "https://cdn.simpleicons.org/nextdotjs/0A0A0A",
+    label: "Next.js",
+    desc: "React Framework",
+    brandColor: "#000000",
   },
   {
-    imgSrc: '/assets/vuedotjs.svg',
-    label: 'Vue.js',
-    desc: 'Framework',
+    imgSrc: "https://cdn.simpleicons.org/vuedotjs/0A0A0A",
+    label: "Vue.js",
+    desc: "Framework",
+    brandColor: "#4FC08D",
   },
   {
-    imgSrc: '/assets/react.svg',
-    label: 'React Native',
-    desc: 'Mobile Framework',
+    imgSrc: "https://cdn.simpleicons.org/react/0A0A0A",
+    label: "React Native",
+    desc: "Mobile Framework",
+    brandColor: "#61DAFB",
   },
   {
-    imgSrc: '/assets/flutter.svg',
-    label: 'Flutter',
-    desc: 'Mobile SDK',
+    imgSrc: "https://cdn.simpleicons.org/flutter/0A0A0A",
+    label: "Flutter",
+    desc: "Mobile SDK",
+    brandColor: "#02569B",
   },
   {
-    imgSrc: '/assets/flutter.svg',
-    label: 'FlutterFlow',
-    desc: 'No-code Mobile Builder',
+    imgSrc: "https://cdn.simpleicons.org/flutter/0A0A0A",
+    label: "FlutterFlow",
+    desc: "No-code Mobile Builder",
+    brandColor: "#02569B",
   },
   {
-    imgSrc: '/assets/firebase.svg',
-    label: 'Firebase',
-    desc: 'Mobile Backend',
+    imgSrc: "https://cdn.simpleicons.org/firebase/0A0A0A",
+    label: "Firebase",
+    desc: "Mobile Backend",
+    brandColor: "#FFCA28",
   },
   {
-    imgSrc: '/assets/supabase.svg',
-    label: 'Superbase',
-    desc: 'Mobile Backend',
+    imgSrc: "https://cdn.simpleicons.org/supabase/0A0A0A",
+    label: "Supabase",
+    desc: "Mobile Backend",
+    brandColor: "#3ECF8E",
   },
   {
-    imgSrc: '/assets/nodejs.svg',
-    label: 'NodeJS',
-    desc: 'Web Server',
+    imgSrc: "https://cdn.simpleicons.org/nodedotjs/0A0A0A",
+    label: "NodeJS",
+    desc: "Web Server",
+    brandColor: "#339933",
   },
   {
-    imgSrc: '/assets/expressjs.svg',
-    label: 'ExpressJS',
-    desc: 'Node Framework',
+    imgSrc: "https://cdn.simpleicons.org/express/0A0A0A",
+    label: "ExpressJS",
+    desc: "Node Framework",
+    brandColor: "#000000",
   },
   {
-    imgSrc: '/assets/php.svg',
-    label: 'PHP',
-    desc: 'Server Language',
+    imgSrc: "https://cdn.simpleicons.org/php/0A0A0A",
+    label: "PHP",
+    desc: "Server Language",
+    brandColor: "#777BB4",
   },
   {
-    imgSrc: '/assets/laravel.svg',
-    label: 'Laravel',
-    desc: 'PHP Framework',
+    imgSrc: "https://cdn.simpleicons.org/laravel/0A0A0A",
+    label: "Laravel",
+    desc: "PHP Framework",
+    brandColor: "#FF2D20",
   },
   {
-    imgSrc: '/assets/mongodb.svg',
-    label: 'MongoDB',
-    desc: 'Database',
+    imgSrc: "https://cdn.simpleicons.org/mongodb/0A0A0A",
+    label: "MongoDB",
+    desc: "Database",
+    brandColor: "#47A248",
   },
   {
-    imgSrc: '/assets/appwrite.svg',
-    label: 'Appwrite',
-    desc: 'Database',
+    imgSrc: "https://cdn.simpleicons.org/appwrite/0A0A0A",
+    label: "Appwrite",
+    desc: "Database",
+    brandColor: "#F02E65",
   },
   {
-    imgSrc: '/assets/redis.svg',
-    label: 'Redis',
-    desc: 'In-memory Database',
+    imgSrc: "https://cdn.simpleicons.org/redis/0A0A0A",
+    label: "Redis",
+    desc: "In-memory Database",
+    brandColor: "#DC382D",
   },
-          
-      
 ];
 
-
 const Skill = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { triggerOnce: true, threshold: 0.1 });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.5,
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+  };
+
   return (
-    <section className="section">
-      <div className="container">
+    <section className="section py-16 bg-gradient-to-b from-zinc-800 to-zinc-900">
+      <div className="container mx-auto px-4">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={containerVariants}
+        >
+          <motion.h2
+            variants={cardVariants}
+            className="text-3xl md:text-4xl font-bold text-zinc-100 mb-4"
+          >
+            Essential Tools I Use
+          </motion.h2>
 
-        <h2 className="headline-2 reveal-up">
-          Essential Tools I use
-        </h2>
+          <motion.p
+            variants={cardVariants}
+            className="text-zinc-300 mt-3 mb-8 max-w-[50ch] text-lg leading-relaxed"
+          >
+            Discover the powerful tools and technologies I use to create exceptional, high-performing websites & applications.
+          </motion.p>
 
-        <p className="text-zinc-400 mt-3 mb-8 max-w-[50ch]">
-          Discover the powerful tools and technologies I use to create exceptional, high-performing websites & applications.
-        </p>
-
-        <div className="grid gap-3 grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))]">
-          {
-            skillItem.map(({ imgSrc, label, desc }, index) =>
-              (
+          <motion.div
+            variants={containerVariants}
+            className="grid gap-4 grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
+          >
+            {skillItem.map(({ imgSrc, label, desc, brandColor }, index) => (
+              <motion.div key={index} variants={cardVariants}>
                 <SkillCard
-                  key={index}
                   imgSrc={imgSrc}
                   label={label}
                   desc={desc}
-                  classes="reveal-up"
+                  brandColor={brandColor}
+                  classes="transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
                 />
-              ))
-          }
-        </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Skill;

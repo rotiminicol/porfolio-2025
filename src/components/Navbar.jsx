@@ -3,42 +3,52 @@
  * @license Apache-2.0
  */
 
-/**
- * component
- */
- 
-
-/**
- * Node modules
- */
-
 import { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
+import { motion, useSpring } from "framer-motion";
 
 const Navbar = ({ navOpen }) => {
   const lastActiveLink = useRef();
   const activeBox = useRef();
-   
+
+  const springConfig = { stiffness: 200, damping: 20 };
+  const activeBoxTop = useSpring(0, springConfig);
+  const activeBoxLeft = useSpring(0, springConfig);
+  const activeBoxWidth = useSpring(0, springConfig);
+  const activeBoxHeight = useSpring(0, springConfig);
 
   const initActiveBox = () => {
-   activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
-   activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
-   activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
-   activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
-  }
-  useEffect(initActiveBox, []);
-  window.addEventListener('resize', initActiveBox)
+    if (lastActiveLink.current) {
+      activeBoxTop.set(lastActiveLink.current.offsetTop);
+      activeBoxLeft.set(lastActiveLink.current.offsetLeft);
+      activeBoxWidth.set(lastActiveLink.current.offsetWidth);
+      activeBoxHeight.set(lastActiveLink.current.offsetHeight);
+    }
+  };
+
+  useEffect(() => {
+    initActiveBox();
+    window.addEventListener("resize", initActiveBox);
+    return () => window.removeEventListener("resize", initActiveBox);
+  }, []);
 
   const activeCurrentLink = (event) => {
-    lastActiveLink.current?.classList.remove('active');
-    event.target.classList.add('active');
+    lastActiveLink.current?.classList.remove("active");
+    event.target.classList.add("active");
     lastActiveLink.current = event.target;
 
-    activeBox.current.style.top = event.target.offsetTop + 'px';
-    activeBox.current.style.left = event.target.offsetLeft + 'px';
-    activeBox.current.style.width = event.target.offsetWidth + 'px';
-    activeBox.current.style.height = event.target.offsetHeight + 'px';
-  }
+    activeBoxTop.set(event.target.offsetTop);
+    activeBoxLeft.set(event.target.offsetLeft);
+    activeBoxWidth.set(event.target.offsetWidth);
+    activeBoxHeight.set(event.target.offsetHeight);
+  };
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   const navItems = [
     {
@@ -65,18 +75,62 @@ const Navbar = ({ navOpen }) => {
     {
       label: "Contact",
       link: "#contact",
-      className: "nav-link md:hidden",
+      className: "nav-link",
     },
   ];
 
   return (
-    <nav className={`navbar ${navOpen ? "active" : ""}`}>
-      {navItems.map(({ label, link, className, ref }, key) => (
-        <a href={link} key={key} ref={ref} className={className} onClick={activeCurrentLink}>
-          {label}
-        </a>
-      ))}
-      <div className="active-box" ref={activeBox}></div>
+    <nav
+      className={`navbar fixed top-0 left-0 w-full z-50 bg-zinc-900/80 backdrop-blur-md shadow-md transition-all duration-300 ${
+        navOpen ? "active py-4" : "py-3"
+      }`}
+    >
+      <div className="container mx-auto px-4 flex items-center justify-between md:justify-center">
+        {/* Logo - visible on all screens */}
+        <div className="font-bold text-sky-400">RN</div>
+        
+        {/* Desktop Navigation - hidden on mobile */}
+        <div className="hidden md:block relative">
+          <div className="flex items-center gap-6 md:gap-8">
+            {navItems.map(({ label, link, className, ref }, key) => (
+              <motion.a
+                key={key}
+                href={link}
+                ref={ref}
+                className={`${className} relative px-4 py-2 text-zinc-200 text-sm md:text-base font-medium hover:text-sky-400 transition-colors duration-300 ${
+                  className.includes("active") ? "text-sky-400" : ""
+                }`}
+                onClick={activeCurrentLink}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {label}
+              </motion.a>
+            ))}
+            <motion.div
+              ref={activeBox}
+              className="active-box absolute bg-sky-500/20 rounded-lg border border-sky-500/50 shadow-lg"
+              style={{
+                top: activeBoxTop,
+                left: activeBoxLeft,
+                width: activeBoxWidth,
+                height: activeBoxHeight,
+              }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            />
+          </div>
+        </div>
+        
+        {/* Mobile Contact Button - hidden on desktop */}
+        <motion.button
+          className="md:hidden bg-sky-500 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300"
+          onClick={scrollToContact}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          Contact Me
+        </motion.button>
+      </div>
     </nav>
   );
 };
@@ -86,4 +140,3 @@ Navbar.propTypes = {
 };
 
 export default Navbar;
-
